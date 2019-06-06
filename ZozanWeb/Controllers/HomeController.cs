@@ -4,13 +4,19 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using ZozanWeb.Models;
+using ProjetZozan.Models;
 
-namespace ZozanWeb.Controllers
+namespace ProjetZozan.Controllers
 {
     public class HomeController : Controller
     {
         public IActionResult Index()
+        {
+            return View();
+        }
+
+
+        public IActionResult listOfShows()
         {
             return View();
         }
@@ -22,6 +28,31 @@ namespace ZozanWeb.Controllers
             return View();
         }
 
+        public IActionResult GrilleProgramme()
+        {         
+            return View();
+        }
+
+        public IActionResult ReplaysList()
+        {
+            return View();
+        }
+
+        public IActionResult Video(string videon)
+        {
+            return View();
+        }
+
+
+
+        public IActionResult getLastReplaysFromChannel(string c)
+        {
+            ViewData["c"] = c;
+
+            return View();    
+        }
+
+
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
@@ -29,6 +60,12 @@ namespace ZozanWeb.Controllers
             return View();
         }
 
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
