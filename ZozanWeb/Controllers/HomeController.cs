@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using ProjetZozan.Models;
+using ZozanWeb.Models;
 
-namespace ProjetZozan.Controllers
+namespace ZozanWeb.Controllers
 {
     public class HomeController : Controller
     {
