@@ -3,45 +3,83 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ZozanWeb</title>
-
-    <environment include="Development">
+    <title>@ViewData["Title"] - ProjetZozan</title>
+    <link rel="stylesheet" href="~/css/style.css"/>
+   <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
+
     </environment>
     <environment exclude="Development">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+
+
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">ZozanWeb</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+    <header id="chaineTv__header">
+        <div class="header_root">
+            <div class="header_column header_left">
+                <ul class="header_primary">
+                    <li class="header_item header_item_logo">
+                        <a class="header_item_link">
+                            <!--<i id="icon_project" class="header_icon_project"></i>-->
+                            <img src="/images/13355-full.png" height=55px />
+                        </a>
+                    </li>
+                    <li class="header_item header_item_replay">
+                        <a id="header_replay_btn" class="header_item_link" href="/replaysList/">
+                            Replay
+                        </a>
+                        <nav id="header_replay">
+                            <div class="header_replay_container">
+                                <aside class="header_replay_channel">
+                                    <ul style="margin-top:5px">
+                                        <li>
+                                            <a onmouseover="changeReplayReview('zozantv1')"><img src="/images/13355-full.png" height=55px /></a>
+                                        </li>
+                                        <li>
+                                            <a onmouseover="changeReplayReview('zozantv1')"><img src="/images/13355-full.png" height=55px /></a>
+                                        </li>
+                                    </ul>
+                                </aside>
+                                <section class="header_replay_last header_replay_last_full header_replay_last_default">
+                                    <p class="header_replay_last_label">Les derniers replay</p>
+                                    <ul></ul>
+                                </section>
+                            </div>
+                        </nav>
+                    </li>
+                    <li class="header_item header_item_live">
+                        <a class="header_item_link" href="/">
+                            <i id="icon_project" class="header_icon_project"></i>
+                            Direct
+                            
+                        </a>
+                    </li>
+                    <li class="header_item">
+                        <a class="header_item_link" href="Home/GrilleProgramme">
+                            <i id="icon_grille" class="header_icon_project"></i>
+                            Grille des Programmes
+
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
-    </nav>
+    </header>
+
+
+    <partial name="_CookieConsentPartial" />
+
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2019 - ZozanWeb</p>
+            <p>&copy; 2019 - ProjetZozan</p>
         </footer>
     </div>
 
@@ -51,20 +89,24 @@
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
     <environment exclude="Development">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
                 asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
                 asp-fallback-test="window.jQuery"
                 crossorigin="anonymous"
-                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
         </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
                 asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
                 asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
                 crossorigin="anonymous"
-                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+                integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd">
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
+
     </environment>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/js/main.js"></script>
 
     @RenderSection("Scripts", required: false)
 </body>
