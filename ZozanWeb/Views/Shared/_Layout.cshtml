@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ProjetZozan</title>
-    <link rel="stylesheet" href="~/css/style.css"/>
-   <environment include="Development">
+    <link rel="stylesheet" href="~/css/style.css" />
+    <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
 
@@ -36,20 +36,30 @@
                         </a>
                         <nav id="header_replay">
                             <div class="header_replay_container">
-                                <aside class="header_replay_channel">
-                                    <ul style="margin-top:5px">
-                                        <li>
-                                            <a onmouseover="changeReplayReview('zozantv1')"><img src="/images/13355-full.png" height=55px /></a>
-                                        </li>
-                                        <li>
-                                            <a onmouseover="changeReplayReview('zozantv1')"><img src="/images/13355-full.png" height=55px /></a>
-                                        </li>
-                                    </ul>
-                                </aside>
-                                <section class="header_replay_last header_replay_last_full header_replay_last_default">
-                                    <p class="header_replay_last_label">Les derniers replay</p>
-                                    <ul></ul>
-                                </section>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <ul class="nav nav-pills nav-stacked">
+                                                <li class="active"><a href="#user1" data-toggle="tab">Panel1</a></li>
+                                                <li><a href="#user2" data-toggle="tab">Panel2</a></li>
+                                                <li><a href="#user3" data-toggle="tab">Panel3</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <div class="tab-content">
+                                                <div role="tabpanel" class="tab-pane active" id="user1">User 1 info</div>
+                                                <div role="tabpanel" class="tab-pane" id="user2">User 2 info</div>
+                                                <div role="tabpanel" class="tab-pane" id="user3">User 3 info</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--<section class="header_replay_last header_replay_last_full header_replay_last_default">
+                                    <p class="header_replay_last_label">Les derniers replays</p>
+
+                                </section>-->
+
                             </div>
                         </nav>
                     </li>
@@ -57,7 +67,7 @@
                         <a class="header_item_link" href="/">
                             <i id="icon_project" class="header_icon_project"></i>
                             Direct
-                            
+
                         </a>
                     </li>
                     <li class="header_item">
